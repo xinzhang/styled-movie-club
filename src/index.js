@@ -6,6 +6,8 @@ import { ApolloLink } from 'apollo-link';
 import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
 import App from './pages/App';
 
 const MOVIE_BASE_URL = 'https://112qaej5y9.execute-api.ap-southeast-2.amazonaws.com/dev/graphql';
@@ -36,9 +38,11 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <ThemeProvider theme={theme}>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 

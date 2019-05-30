@@ -24,11 +24,12 @@ const Background = styled.div`
 `;
 
 const StyledTitle = styled.h3`
+  color: ${props => props.theme.primaryText};
 `;
 
 const StyledLink = styled.a`
   cursor: pointer;
-  color: ${props => (props.isActive ? props.theme.primary : props.theme.secondary)};
+  color: ${props => (props.isActive ? props.theme.primary : props.theme.primaryText)};  
   border-radius: 300px;
   border-style: solid;
   border-width: 2px;
@@ -44,7 +45,7 @@ const StyledLink = styled.a`
   }
 `;
 
- function Navigation() {
+ function Navigation(props) {
   return (
       <Background>
         <Container>

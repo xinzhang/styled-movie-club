@@ -48,7 +48,7 @@ export default createGlobalStyle`
     font-weight: 400;
     color: ${theme.secondary};
     overflow-x: hidden;
-    background: rgba(2, 0, 36, 1);
+    background: ${theme.backgroundPrimary};
   }
 
   figure {

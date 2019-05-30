@@ -5,8 +5,8 @@ import Navigation from '../../components/Navigation';
 
 import * as routes from '../routes';
 
-const Search = <h1>this is search page</h1>;
-const Movies = <h1>this is list of movies </h1>;
+import Movies from '../Movies';
+import Search from '../Search';
 
 class App extends Component {
   state = {
@@ -17,18 +17,16 @@ class App extends Component {
     this.setState({ organizationName: value });
   };
 
-  render() {    
-
+  render() {
     return (
       <Router>
         <div className="App">
           <GlobalStyles />
           <Navigation />
-
-          <div>
+          <div>            
             <Route
               exact
-              path={routes.Home}
+              path={routes.Search}
               component={() => <Search />}
             />
             <Route
